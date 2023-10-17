@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White"
+    app:guidelineUseRtl="true"
+    tools:context=".ui.activity.HomePageViewActivity">
+
+    <include
+        android:id="@+id/taskToolbar"
+        layout="@layout/task_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50px"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollview_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:nestedScrollingEnabled="false"
+        app:layout_constraintBottom_toTopOf="@id/addButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/taskToolbar"
+        app:layout_constraintVertical_bias="0.373">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:padding="1dp"
+                android:text="hi Ramesh."
+                android:textColor="@color/Black"
+                android:textSize="7sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/salutaiontext"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/salutaiontext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:padding="1dp"
+                android:text="welcome..!"
+                android:textColor="@color/Black"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/username" />
+
+            <ImageButton
+                android:id="@+id/userimage"
+                android:layout_width="60px"
+                android:layout_height="60px"
+                android:layout_marginEnd="15dp"
+                android:background="@android:color/transparent"
+                android:padding="5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pendingtasktext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:text="6 Pending Task"
+                android:textColor="@color/Orange"
+                android:textSize="15px"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/salutaiontext" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/CategoriesText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Categories"
+                android:textColor="@color/DarkBlue"
+                android:textSize="15px"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pendingtasktext" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/CategoriesLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:padding="19dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/CategoriesText">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/RoutineLayout"
+                    style="@style/CustomCardStyle2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="0dp">
+
+                    <ImageButton
+                        android:id="@+id/RoutineTaskButton"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_margin="3dp"
+                        android:background="@android:color/transparent"
+                        android:padding="1dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/img_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10px"
+                        android:text="routine task"
+                        android:textColor="@color/Black"
+                        android:textSize="10sp"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/RoutineLayout1"
+                    style="@style/CustomCardStyle2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/RoutineLayout">
+
+                    <ImageButton
+                        android:id="@+id/WorkTaskButton"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_margin="3dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/img_1" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10px"
+                        android:text="work task"
+                        android:textColor="@color/Black"
+                        android:textSize="10sp"/>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/RoutineLayout2"
+                    style="@style/CustomCardStyle2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/RoutineLayout1">
+
+                    <ImageButton
+                        android:id="@+id/PriorityTaskButton"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_margin="3dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/img_3" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10px"
+                        android:text="priority task"
+                        android:textColor="@color/Black"
+                        android:textSize="10sp"/>
+
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/tasknames"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="9"
+                app:layout_constraintBottom_toTopOf="@id/ongoingTaskText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/CategoriesLayout">
+
+                <TextView
+                    android:id="@+id/RoutineTaskText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="Routine Task "
+                    android:textColor="@color/Black"
+                    android:textSize="5sp" />
+
+                <TextView
+                    android:id="@+id/RoutineTaskText1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="Work Task "
+                    android:textColor="@color/Black"
+                    android:textSize="5sp" />
+
+                <TextView
+
+                    android:id="@+id/RoutineTaskText2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="Priority Task"
+                    android:textColor="@color/Black"
+                    android:textSize="5sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/ongoingTaskText"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="20dp"
+                android:text="On Goning Task"
+                android:textColor="@color/Black"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/recycleOngoingTask"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tasknames" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleOngoingTask"
+                style="@style/CustomCardStyle"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:visibility="gone"
+                app:fastScrollEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ongoingTaskText" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/addButton"
+        android:layout_width="50px"
+        android:layout_height="50px"
+        android:layout_margin="5px"
+        android:background="@drawable/curved_corner_voilet"
+        android:src="@drawable/baseline_add_24"
+        android:textColor="@color/Black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

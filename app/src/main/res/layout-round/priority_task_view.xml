@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="29dp"
+    android:background="@color/White"
+    tools:context=".ui.activity.PriorityTaskViewActivity">
+
+    <include
+        android:id="@+id/toolbar_header_priority_task"
+        layout="@layout/task_toolbar"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/priority_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Priotity task's"
+        android:textColor="@color/Black"
+        android:textSize="10sp"
+        android:layout_marginStart="5dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Priority_task_recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/priority_text" />
+
+    <ImageView
+        android:id="@+id/priorityaddbutton"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="3dp"
+        android:background="@drawable/curved_corner_voilet"
+        android:padding="3dp"
+        android:src="@drawable/baseline_add_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
